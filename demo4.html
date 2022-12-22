@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images.jpg" alt="" id="abc" style="width: 350px; height: 200px; position: absolute; top: 0px; left: 0px; transition: 100ms;">
+    <script>
+        let images = document.getElementById('abc');
+        let speedX = 5;
+        let speedY = 0;
+        let s = 0;
+        
+        setInterval(()=>{
+            images.style.left = parseInt(images.style.left) + speedX + 'px';
+            images.style.top = parseInt(images.style.top) + speedY + 'px';
+            s += 5;
+
+            if(s >= window.innerWidth - parseInt(images.style.width)){
+                speedX = 0;
+                speedY = 5;
+            }
+            if(s >= window.innerWidth + window.innerHeight - parseInt(images.style.width) - parseInt(images.style.width)){
+                speedX = -5;
+                speedY = 0;
+            }
+            if(s >= 2*window.innerWidth + window.innerHeight - 2*parseInt(images.style.width) - parseInt(images.style.width)){
+                speedX = 0;
+                speedY = -5;
+            }
+            if(s >= 2*window.innerWidth + 2*window.innerHeight - 2*parseInt(images.style.width) - 2*parseInt(images.style.width)){
+                speedX = 5;
+                speedY = 0;
+                s = 0;
+            }
+            
+        }, 10)
+    </script>
+</body>
+</html>

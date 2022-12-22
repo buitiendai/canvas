@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tự di chuyển</title>
+</head>
+<body>
+    <img src="images.jpg" alt="" id="abc" style="width: 350px; height: 200px; position: absolute; top: 0px; left: 0px; transition: 100ms;">
+    <script>
+        let images = document.getElementById('abc');
+        let speedX = 5;
+        let speedY = 10;
+        
+        setInterval(()=>{
+            images.style.left = parseInt(images.style.left) + speedX + 'px';
+            images.style.top = parseInt(images.style.top) + speedY + 'px';
+
+            if(parseInt(images.style.left) >= window.innerWidth - parseInt(images.style.width)){
+                speedX = -speedX;
+            }
+            if(parseInt(images.style.top) >= window.innerHeight - parseInt(images.style.height)){
+                speedY = -speedY;
+            }
+            if(parseInt(images.style.left) <=0){
+                speedX = -speedX;
+            }
+            if(parseInt(images.style.top) <=0){
+                speedY = -speedY;
+            }
+        }, 50)
+    </script>
+</body>
+</html>

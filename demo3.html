@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script>
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext('2d');
+        //========Vẽ đường chéo===========
+        // ctx.moveTo(0,0);
+        // ctx.lineTo(200,100);
+        //========Vẽ đường tròn===========
+        // ctx.beginPath();
+        // ctx.arc(95,50,40,0,2*Math.PI);
+        // ctx.stroke();
+        //========Vẽ chữ=========
+        // ctx.font = "30px Arial";
+        // ctx.fillText("Hello World", 10, 50);
+        // ctx.strokeText("Xin chào", 10, 50);
+        //========Hiệu ứng Gradient========
+        // let grd = ctx.createLinearGradient(0,0,200,0);
+        let grd = ctx.createRadialGradient(75,50,5,90,60,100);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+        ctx.fillStyle = grd;
+        ctx.fillRect(10,10,150,80);
+    </script>
+</body>
+</html>

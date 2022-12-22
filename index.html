@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+    <img src="images.jpg" alt="" id="abc" style="width: 500px; position: absolute; top: 200px; left: 200px; transition: 1s;">
+    <button onclick="sangPhai()">Sang phải</button>
+    <button onclick="sangTrai()">Sang trái</button>
+    <button onclick="lenTren()">Lên trên</button>
+    <button onclick="xuongDuoi()">Xuống dưới</button>
+    <script>
+        let images = document.getElementById('abc');
+        function sangPhai(){
+            let leftPosition = parseInt(images.style.left);
+            images.style.left = leftPosition + 50 + 'px';
+        }
+        function sangTrai(){
+            let leftPosition = parseInt(images.style.left);
+            images.style.left = leftPosition - 50 + 'px';
+        }
+        function lenTren(){
+            let topPosition = parseInt(images.style.top);
+            images.style.top = topPosition - 50 + 'px';
+        }
+        function xuongDuoi(){
+            let topPosition = parseInt(images.style.top);
+            images.style.top = topPosition + 50 + 'px';
+        }
+    </script>
+</body>
+</html>
